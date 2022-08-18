@@ -49,7 +49,7 @@ function equal(){
   result.textContent =value;
   screen.appendChild(result);
   num = "";
-  num2 = 0;
+  num2 = "";
 }
 }
 function clear(){
@@ -69,12 +69,7 @@ function operatorsfuns(e){
     operator =e.target.innerText;
     screen.textContent = "";
   }
-  else if(num === "" && screen.textContent === ""){
-     num = (+result.textContent);
-     operator = e.target.innerText;
-     result.textContent = "";
-  }
-  else{
+  else if(num !==""&& result.textContent ===""){
     num2 = (+screen.textContent);
     screen.textContent=""
     let value = operate(num,operator,num2);
@@ -82,6 +77,9 @@ function operatorsfuns(e){
     screen.appendChild(result);
     num = value;
     num2 = "";
+    operator = e.target.innerText;
+  }
+  else{
     operator = e.target.innerText;
   }
 }
