@@ -43,6 +43,9 @@ function equal(){
   if(num === ""|| num2 === ""|| operator === ""){
     return false;
   }
+  else if(result.textContent!==""){
+  num2="";
+  }
   else{
   screen.textContent="";
   let value = operate(num,operator,num2);
