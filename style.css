@@ -2,20 +2,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 40px;
   background-color: 	cadetblue;
 }
 .container{
-padding: 15px;
+padding: 20px;
 background-color: white;
+border-radius: 10px;
 display: inline-block;
 box-shadow: 5px 4px 8px 5px rgba(0,0,0,0.2);
 }
 .buttons{
 display: flex;
 flex-wrap: wrap;
-gap: 10px;
-width: 260px;
+gap: 15px;
+width: 320px;
 }
 .screen {
   height: 75px;
@@ -27,7 +28,6 @@ width: 260px;
   margin-bottom: 5px;
 }
 button{
-  padding: 20px;
   border-radius: 10px;
   font-size: medium;
   border: solid;
@@ -35,15 +35,30 @@ button{
 }
 .number{
   background-color:	aliceblue;
+  height: 75px;
+  width: 66px;
 }
 .operator{
   background-color:darkcyan;
+  height: 75px;
+  width: 66px;
+  margin-left: 5px;
 }
 .equal{
-  background-color: darkcyan;
-  padding: 10px 79px;
+  background-color:	aliceblue;
+  height: 75px;
+  width: 66px;
 }
 .clear{
   background-color:	slategrey;
-  padding: 10px 79px;
+  padding: 20px 55px;
+}
+.point{
+  background-color: aliceblue;
+  height: 75px;
+  width: 66px;
+}
+.delete{
+  background-color: slategrey;
+  padding: 20px 55px;
 }

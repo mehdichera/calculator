@@ -87,11 +87,91 @@ function operatorsfuns(e){
     operator = e.target.innerText;
   }
 }
+function pointfun(e){
+  if(screen.textContent.includes(".")=== true){
+    return false;
+  }
+  else{
+    screen.textContent+=e.target.innerText;
+  }
+}
+function deletefun(){
+  let x = screen.textContent.split('');
+  if (result.textContent ===""&& x.includes(" ") === true){
+  x.splice(0,5);
+  x.splice(-1,1);
+  let screenContent = x.join("");
+  screen.textContent=screenContent;
+}
+else if (result.textContent ===""&& x.includes(" ") === false){
+  x.splice(-1,1);
+  let screenContent = x.join("");
+  screen.textContent=screenContent;
+}
+else if (result.textContent!==""&& x.includes(" ") === true){
+  let y = result.textContent.split('');
+  y.splice(0,5);
+  y.splice(-1,1);
+  let screenContent = y.join("");
+  result.textContent=screenContent;
+}
+else{
+ let y = result.textContent.split('');
+  y.splice(-1,1);
+  let screenContent = y.join("");
+  result.textContent=screenContent; 
+}
+}
+function keyBoard(e){  
+if (e.key === "0"||e.key === "1"||e.key === "2"||e.key === "3"||e.key === "4"||e.key === "5"||e.key === "6"||e.key === "7"||e.key === "8"||e.key === "9"){
+  result.textContent="";
+  screen.textContent+=e.key;
+}
+else if(e.key === "+"||e.key === "-"||e.key === "*"||e.key ==="/"){
+  if(num === ""){
+    num = (+screen.textContent);
+    operator =e.key;
+    screen.textContent = "";
+  }
+  else if(num !==""&& result.textContent ===""){
+    num2 = (+screen.textContent);
+    screen.textContent=""
+    let value = operate(num,operator,num2);
+    result.textContent =value;
+    screen.appendChild(result);
+    num = value;
+    num2 = "";
+    operator = e.key;
+  }
+  else{
+    operator = e.key;
+  }
+}
+else if(e.key === "="){
+equal();
+}
+else if(e.key === "."){
+  if(screen.textContent.includes(".")=== true){
+    return false;
+  }
+  else{
+    screen.textContent+=e.key;
+  }
+}
+else if(e.key === "Backspace"){
+deletefun();
+}
+else if(e.key === "Escape"){
+  clear();
+}
+}
 function operations(){
   let buttons = document.querySelectorAll(".number");
   let operators = document.querySelectorAll(".operator");
   let equalbtn = document.querySelector(".equal");
   let clearbtn = document.querySelector(".clear");
+  let pointbtn = document.querySelector(".point");
+  let deletebtn = document.querySelector(".delete");
   buttons.forEach(function(item){
     item.addEventListener('click',display)
   });
@@ -100,5 +180,9 @@ function operations(){
   });
   equalbtn.addEventListener('click',equal);
   clearbtn.addEventListener('click',clear);
+  pointbtn.addEventListener('click',pointfun);
+  deletebtn.addEventListener('click',deletefun);
+  document.addEventListener('keydown',keyBoard);
 }
 operations();
+
