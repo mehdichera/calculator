@@ -44,8 +44,7 @@ function equal(){
     return false;
   }
   else if(result.textContent!==""){
-    num2 = "";
-    return false;
+  num2="";
   }
   else{
   screen.textContent="";
