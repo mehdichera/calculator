@@ -1,2 +1,2 @@
 # calculator
-Your site is live at https://mehdichera.github.io/calculator/
+the site is live at https://mehdichera.github.io/calculator/
